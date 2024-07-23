@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f3;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .cal {
+            width: 350px;
+            height: 550px;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            height: 70px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            margin-top: 80px;
+            text-align: right;
+            padding: 20px;
+            padding-right: 2px;
+            font-size: 36px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .info input[type="button"] {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .info input[type="button"]:hover {
+            background-color: #f1f1f1;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .f2 {
+            color: #ff9500;
+        }
+
+        .zero {
+            width: 130px !important;
+            border-radius: 20px !important;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="cal" align="center">
+            <form>
+                <div class="output" disabled>
+                    <input type="text" name="output">
+                </div>
+                <div class="info">
+                    <input type="button" name="operator" value="AC" onclick="output.value = ''" class="f1">
+                    <input type="button" name="operator" value="C" onclick="output.value = output.value.slice(0, -1)"  class="f1">
+                    <input type="button" name="operator" value="%" onclick="output.value += '%'"  class="f1">
+                    <input type="button" name="operator" value="/" onclick="output.value += '/'"  class="f2">
+                </div>
+                <div class="info">
+                    <input type="button" name="num" value="7" onclick="output.value += '7'">
+                    <input type="button" name="num" value="8" onclick="output.value += '8'">
+                    <input type="button" name="num" value="9" onclick="output.value += '9'">
+                    <input type="button" name="operator" value="+" onclick="output.value += '+'" class="f2">
+                </div>
+                <div class="info">
+                    <input type="button" name="num" value="4" onclick="output.value += '4'">
+                    <input type="button" name="num" value="5" onclick="output.value += '5'">
+                    <input type="button" name="num" value="6" onclick="output.value += '6'">
+                    <input type="button" name="operator" value="-" onclick="output.value += '-'" class="f2">
+                </div>
+                <div class="info">
+                    <input type="button" name="num" value="0" onclick="output.value += '0'" class="zero">
+                    <input type="button" name="num" value="." onclick="output.value += '.'">
+                    <input type="button" name="operator" value="=" onclick="output.value = eval(output.value)" class="f2">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
